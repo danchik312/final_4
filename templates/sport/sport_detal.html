@@ -1,0 +1,24 @@
+{% load static %}
+{% include '../header.html' %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+<h1>Название - {{ sport_id.name}}</h1>
+<p>Почта Продавца - {{ sport_id.email}}</p>
+<img src="{{ sport_id.photo.url}}" width="350" height="250">
+<p>О товаре - {{ sport_id.about_product }}</p>
+<data>Дата создания поста - {{ sport_id.creater_at }}</data>
+
+<ul>
+    {% for i in sport_id.reviews_product.all %}
+
+    <li>
+        <h1>{{ i.stars }}</h1>
+        <p>{{ i.text }}</p>
+        <p>{{ i.created_at }}</p>
+    </li>
+
+    {% endfor %}
+</ul>
+
+
+{% include '../footer.html' %}

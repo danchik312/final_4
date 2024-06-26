@@ -1,0 +1,14 @@
+{% include '../header.html' %}
+<h1>Список товаров</h1>
+{% for i in sport %}
+<div class="card" style="width: 18rem;">
+  <img src="{{ i.photo.url }}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">{{ i.name }}</h5>
+    <a href="/Sport_list/{{ i.id}}/" class="btn btn-primary">Подробнее</a>
+  </div>
+</div>
+<br>
+{% endfor %}
+
+{% include '../footer.html' %}

@@ -1,0 +1,18 @@
+{% include '../header.html' %}
+<ol>
+    {% for j in pensioner_tags %}
+    <li>
+        <h1>{{ j.title }}</h1>
+        <p>{{ j.price }}</p>
+
+        {% for pensioner in j.tags.all %}
+        <p>
+            #{{ pensioner.name }}
+        </p>
+        {% endfor %}
+
+    </li>
+    {% endfor %}
+
+</ol>
+{% include '../footer.html' %}

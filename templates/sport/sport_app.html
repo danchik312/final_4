@@ -1,18 +1,29 @@
 {% include '../header.html' %}
+<center>
+{% for i in quote %}
 
-<h1>
+<h1>{{ i.text }}</h1>
 
-    {% for i in Quote %}
-    <strong>
-        {{ i.name}}
-    </strong>
+{% endfor %}
+<br>
+
+{% for j in video_url %}
+
+<iframe src="{{ j.video }}" frameborder="0"></iframe>
+
+{% endfor %}
+<br>
+
+<ul>
+    {% for x in top_product %}
+    <li>
+        <h2>{{ x.name }}</h2>
+        <img src="{{ x.photo.url }}" width="300" height="250">
+        <p> цена-{{ x.price }}</p>
+    </li>
     {% endfor %}
-</h1>
 
+</ul>
 
-
-
-
-
-
+</center>
 {% include '../footer.html' %}
