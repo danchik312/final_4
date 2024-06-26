@@ -33,7 +33,7 @@ class SportDetailView(generic.DetailView):
 
     def get_object(self, **kwargs):
         sport_id = self.kwargs.get("id")
-        return get_object_or_404(models.ReviewsProduct, id=sport_id)
+        return get_object_or_404(models.Sport_list, id=sport_id)
 
 def sport_tags_view(request):
     if request.method == "GET":
