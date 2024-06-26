@@ -11,5 +11,6 @@ urlpatterns = [
         name="SportDetailView",
     ),
     path("youth/", views.sport_tags_view, name="youth"),
+    path('review_list/', views.review_list_view, name='review_list'),
     path('pensioner/', views.pensioner_tags_view, name="pensioner"),
 ]

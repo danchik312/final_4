@@ -47,7 +47,7 @@ class Sport_list(models.Model):
 
 class ReviewsProduct(models.Model):
     reviews_sport = models.ForeignKey(
-        Sport_list, on_delete=models.CASCADE, related_name="reviews_product"
+        Sport_list, on_delete=models.CASCADE, related_name="reviews_sport"
     )
     text = models.TextField()
     stars = models.PositiveIntegerField(

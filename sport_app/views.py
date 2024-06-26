@@ -1,7 +1,7 @@
-from django.shortcuts import render , get_object_or_404
+from django.shortcuts import render , get_object_or_404 , redirect
 from . import models, forms
 from django.views import generic
-
+from .forms import SportListForm
 
 class SportListView(generic.ListView):
     template_name = 'sport/sport_app.html'
@@ -62,3 +62,13 @@ def all_products(request):
         )
 
 
+def review_list_view(request):
+    if request.method == 'POST':
+        form = SportListForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('sport_app')
+    else:
+        form = SportListForm()
+
+    return render(request, 'sport_detal.html', {'form': form})

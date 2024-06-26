@@ -9,7 +9,7 @@
 <data>Дата создания поста - {{ sport_id.creater_at }}</data>
 
 <ul>
-    {% for i in sport_id.reviews_product.all %}
+    {% for i in sport_id.reviews_sport.all %}
 
     <li>
         <h1>{{ i.stars }}</h1>
@@ -20,5 +20,11 @@
     {% endfor %}
 </ul>
 
+<h2>Review List Form</h2>
+    <form method="post" action="{% url 'review_list' %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Submit</button>
+    </form>
 
 {% include '../footer.html' %}
